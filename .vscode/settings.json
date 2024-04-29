@@ -4,5 +4,7 @@
   "java.project.referencedLibraries": [
     "lib/**/*.jar",
     "c:\\Users\\Pixel\\Downloads\\mysql-connector-j-8.3.0.jar"
-  ]
+  ],
+  "files.autoSave": "afterDelay",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true
 }
