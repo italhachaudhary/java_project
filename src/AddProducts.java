@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.sql.*;
 
 public class AddProducts {
-    public static void main(String[] args) {
+    public void addProducts() {
         // JFrame
         JFrame frame = new JFrame("Add Products");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
