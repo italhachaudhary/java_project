@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.sql.*;
 
 public class RegistrationForm {
-    public static void main(String[] args) {
+    public void register() {
 
         // JFrame
         JFrame frame = new JFrame("Registration Form");

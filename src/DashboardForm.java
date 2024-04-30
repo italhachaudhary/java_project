@@ -52,6 +52,7 @@ public class DashboardForm {
             JButton deleteButton = new JButton("Delete Selected Record");
             JButton addButton = new JButton("Add New Record");
             JButton updateButton = new JButton("Update Record");
+            JButton logoutButton = new JButton("Logout");
 
             deleteButton.addActionListener(e -> {
                 int selectedRow = table.getSelectedRow();
@@ -81,12 +82,39 @@ public class DashboardForm {
                 addProductForm.addProducts();
             });
 
+            updateButton.addActionListener(e -> {
+                int selectedRow = table.getSelectedRow();
+                if (selectedRow != -1) { // If a row is selected
+                    String productCodeToUpdate = (String) table.getValueAt(selectedRow, 0);
+                    String productNameToUpdate = (String) table.getValueAt(selectedRow, 1);
+                    String catagoryToUpdate = (String) table.getValueAt(selectedRow, 2);
+                    String quantityToUpdate = (String) table.getValueAt(selectedRow, 3);
+                    String priceToUpdate = (String) table.getValueAt(selectedRow, 4);
+                    String descriptionToUpdate = (String) table.getValueAt(selectedRow, 5);
+
+                    frame.dispose();
+                    UpdateForm updateProductForm = new UpdateForm();
+                    updateProductForm.updateProducts(productCodeToUpdate, productNameToUpdate, catagoryToUpdate,
+                            quantityToUpdate, priceToUpdate, descriptionToUpdate);
+                } else {
+                    JOptionPane.showMessageDialog(panel, "Please select a row to update.", "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+
+            });
+
+            logoutButton.addActionListener(e -> {
+                frame.dispose();
+
+                LoginForm.main(null);
+            });
             // Create a separate panel for the buttons
             JPanel buttonPanel = new JPanel();
             buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
             buttonPanel.add(addButton);
             buttonPanel.add(deleteButton);
             buttonPanel.add(updateButton);
+            buttonPanel.add(logoutButton);
 
             panel.add(buttonPanel, BorderLayout.SOUTH);
 

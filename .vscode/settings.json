@@ -1,10 +1,15 @@
 {
   "java.project.sourcePaths": ["src"],
   "java.project.outputPath": "bin",
-  "java.project.referencedLibraries": [
-    "lib/**/*.jar",
-    "c:\\Users\\Pixel\\Downloads\\mysql-connector-j-8.3.0.jar"
-  ],
+  "java.project.referencedLibraries": {
+    "include": [
+      "lib/**/*.jar",
+      "c:\\Users\\Pixel\\Desktop\\mysql-connector-j-8.3.0.jar"
+    ],
+    "exclude": [
+      "c:\\Users\\Pixel\\Downloads\\mysql-connector-j-8.3.0.jar"
+    ]
+  },
   "files.autoSave": "afterDelay",
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true
 }

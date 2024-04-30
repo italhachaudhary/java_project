@@ -14,6 +14,7 @@ public class LoginForm {
         JLabel l2 = new JLabel("Password: ");
         JPasswordField tf2 = new JPasswordField(22);
         JButton btn = new JButton("Login");
+        JButton register = new JButton("Register");
 
         // JPanel
         JPanel panel = new JPanel();
@@ -22,10 +23,19 @@ public class LoginForm {
         panel.add(tf1);
         panel.add(l2);
         panel.add(tf2);
-        panel.add(btn);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+        buttonPanel.add(btn);
+        buttonPanel.add(register);
+
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        mainPanel.add(panel);
+        mainPanel.add(buttonPanel);
 
         // Adding panel to JFrame
-        frame.setContentPane(panel);
+        frame.setContentPane(mainPanel);
         frame.pack();
 
         // ActionListener
@@ -67,6 +77,12 @@ public class LoginForm {
                     System.out.println("Connection Failed" + ex);
                 }
             }
+        });
+
+        register.addActionListener(e -> {
+            frame.dispose();
+            RegistrationForm rf = new RegistrationForm();
+            rf.register();
         });
 
     }
