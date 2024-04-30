@@ -105,7 +105,6 @@ public class DashboardForm {
 
             logoutButton.addActionListener(e -> {
                 frame.dispose();
-
                 LoginForm.main(null);
             });
             // Create a separate panel for the buttons
