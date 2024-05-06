@@ -1,5 +1,6 @@
 import java.sql.*;
 import javax.swing.*;
+import java.awt.*;
 
 public class LoginForm {
     public static void main(String[] args) {
@@ -13,12 +14,20 @@ public class LoginForm {
         JTextField tf1 = new JTextField(22);
         JLabel l2 = new JLabel("Password: ");
         JPasswordField tf2 = new JPasswordField(22);
+
         JButton btn = new JButton("Login");
+        btn.setBackground(Color.BLUE);
+        btn.setForeground(Color.WHITE);
+
         JButton register = new JButton("Register");
+        register.setBackground(Color.GREEN);
+        register.setForeground(Color.BLACK);
 
         // JPanel
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setBackground(Color.WHITE);
+        panel.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(l1);
         panel.add(tf1);
         panel.add(l2);
@@ -31,6 +40,8 @@ public class LoginForm {
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        mainPanel.setBackground(Color.WHITE);
+        mainPanel.setBorder(BorderFactory.createTitledBorder("Login Form"));
         mainPanel.add(panel);
         mainPanel.add(buttonPanel);
 

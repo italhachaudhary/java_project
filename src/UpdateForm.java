@@ -13,6 +13,7 @@ public class UpdateForm {
         // Form
         JLabel l1 = new JLabel("Product Code: ");
         JTextField tf1 = new JTextField(22);
+        tf1.setEditable(false);
         tf1.setText(productCodeToUpdate);
 
         JLabel l2 = new JLabel("Product Name: ");
@@ -90,7 +91,7 @@ public class UpdateForm {
                 DashboardForm db = new DashboardForm();
                 db.dashboard();
 
-            } catch (Exception ex) {
+            } catch (Exception ex) { 
                 System.out.println("Connection Failed" + ex);
             }
         });

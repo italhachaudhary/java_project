@@ -54,6 +54,12 @@ public class DashboardForm {
             JButton updateButton = new JButton("Update Record");
             JButton logoutButton = new JButton("Logout");
 
+            addButton.addActionListener(e -> {
+                frame.dispose();
+                AddProducts addProductForm = new AddProducts();
+                addProductForm.addProducts();
+            });
+
             deleteButton.addActionListener(e -> {
                 int selectedRow = table.getSelectedRow();
                 if (selectedRow != -1) { // If a row is selected
@@ -76,12 +82,6 @@ public class DashboardForm {
                 }
             });
 
-            addButton.addActionListener(e -> {
-                frame.dispose();
-                AddProducts addProductForm = new AddProducts();
-                addProductForm.addProducts();
-            });
-
             updateButton.addActionListener(e -> {
                 int selectedRow = table.getSelectedRow();
                 if (selectedRow != -1) { // If a row is selected
@@ -100,13 +100,13 @@ public class DashboardForm {
                     JOptionPane.showMessageDialog(panel, "Please select a row to update.", "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
-
             });
 
             logoutButton.addActionListener(e -> {
                 frame.dispose();
                 LoginForm.main(null);
             });
+
             // Create a separate panel for the buttons
             JPanel buttonPanel = new JPanel();
             buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
