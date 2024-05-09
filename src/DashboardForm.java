@@ -115,9 +115,12 @@ public class DashboardForm {
             buttonPanel.add(updateButton);
             buttonPanel.add(logoutButton);
 
-            panel.add(buttonPanel, BorderLayout.SOUTH);
+            JPanel mainPanel = new JPanel();
+            mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+            mainPanel.add(panel);
+            mainPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-            frame.setContentPane(panel);
+            frame.setContentPane(mainPanel);
             frame.pack();
 
         } catch (Exception ex) {

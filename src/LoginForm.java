@@ -7,7 +7,6 @@ public class LoginForm {
         JFrame frame = new JFrame("Login Form");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 400);
-        frame.setVisible(true);
 
         // Form
         JLabel l1 = new JLabel("Username: ");
@@ -16,17 +15,11 @@ public class LoginForm {
         JPasswordField tf2 = new JPasswordField(22);
 
         JButton btn = new JButton("Login");
-        btn.setBackground(Color.BLUE);
-        btn.setForeground(Color.WHITE);
-
         JButton register = new JButton("Register");
-        register.setBackground(Color.GREEN);
-        register.setForeground(Color.BLACK);
 
         // JPanel
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setBackground(Color.WHITE);
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(l1);
         panel.add(tf1);
@@ -40,13 +33,12 @@ public class LoginForm {
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-        mainPanel.setBackground(Color.WHITE);
-        mainPanel.setBorder(BorderFactory.createTitledBorder("Login Form"));
         mainPanel.add(panel);
         mainPanel.add(buttonPanel);
 
-        // Adding panel to JFrame
+        // Adding to JFrame
         frame.setContentPane(mainPanel);
+        frame.setVisible(true);
         frame.pack();
 
         // ActionListener
