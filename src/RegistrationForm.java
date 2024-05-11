@@ -76,7 +76,7 @@ public class RegistrationForm {
                     statement.executeUpdate();
 
                     JOptionPane.showMessageDialog(frame, "User registered successfully");
-                    connection.close();
+                    LoginForm.main(null);
 
                 } catch (Exception ex) {
                     System.out.println("Connection Failed " + ex);
